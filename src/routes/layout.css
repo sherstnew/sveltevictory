@@ -43,7 +43,7 @@
 	--sidebar-accent-foreground: oklch(0.205 0 0);
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
-	--svelte: #FF3E00;
+	--svelte: #ff3e00;
 }
 
 .dark {
@@ -78,7 +78,7 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
-	--svelte: #FF3E00;
+	--svelte: #ff3e00;
 }
 
 @theme inline {
@@ -139,4 +139,27 @@
 		scroll-snap-type: y mandatory;
 		scroll-behavior: smooth;
 	}
+	a {
+		color: var(--color-svelte);
+	}
+}
+
+.image-fade-x {
+	mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.image-fade-y {
+	mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+.image-fade-top {
+	mask-image: linear-gradient(to top, black 0%, black 90%, transparent);
+}
+.image-fade-bottom {
+	mask-image: linear-gradient(to bottom, black 0%, black 90%, transparent);
+}
+.image-fade-both {
+	mask-image:
+		linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+		linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+	-webkit-mask-composite: source-in;
+	mask-composite: intersect;
 }
