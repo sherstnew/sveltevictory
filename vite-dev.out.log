@@ -196,3 +196,145 @@ https://svelte.dev/e/css_unused_selector
 [2m22:55:56[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
 [2m22:56:15[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
 [2m22:56:15[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:57:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:57:29[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:57:39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:57:39[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:57:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:57:45[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:57:58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:57:58[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:58:13[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:58:17[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:58:24[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:58:29[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:58:31[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:58:34[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:58:42[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m22:58:42[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:59:05[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:59:05[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:59:08[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:59:08[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:59:09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:59:09[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:59:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:59:18[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:59:21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:59:21[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m22:59:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte?svelte&type=style&lang.css, /src/routes/layout.css[22m
+[2m22:59:22[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:00:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:00:24[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:00:39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:00:39[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:00:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:00:41[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:00:42[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:00:42[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:00:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:00:48[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:03[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:19[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:19[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:24[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:26[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:30[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:38[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:53[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:53[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:01:54[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:01:54[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:02:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:02:38[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:02:40[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:02:40[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:03:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:03:18[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:03:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:03:22[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:03:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:03:26[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:04:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:04:26[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:04:43[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:04:43[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:04:56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/layout.css[22m
+[2m23:04:56[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:16[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:16[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:20[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:20[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:21[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:35[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:35[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:38[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:39[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:44[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:44[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:05:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:05:52[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:06:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:06:29[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:06:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:06:31[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:06:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:06:33[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:06:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:06:37[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:16[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:16[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:19[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:19[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:22[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:24[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:44[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:44[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:47[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:07:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:07:51[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:08:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/lib/components/svelte-victory.svelte, /src/routes/layout.css[22m
+[2m23:08:03[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/lib/components/svelte-victory.svelte[22m
+[2m23:18:02[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/+page.svelte, /src/routes/layout.css[22m
+[2m23:18:02[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/+page.svelte[22m
+[2m23:18:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33mlenis[32m[39m
+[2m23:18:03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m23:18:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/+page.svelte, /src/routes/layout.css[22m
+[2m23:18:17[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/+page.svelte[22m
+[2m23:18:49[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/+page.svelte, /src/routes/layout.css[22m
+[2m23:18:49[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/+page.svelte[22m
+[2m23:19:01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/layout.css[22m
+[2m23:19:01[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/layout.css[22m
+[2m23:19:16[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/+page.svelte, /src/routes/layout.css[22m
+[2m23:19:16[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/+page.svelte[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/client/nodes/0.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/client/nodes/1.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/client/nodes/2.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/client/app.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/server/internal.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/client/matchers.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/root.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/root.js[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/.svelte-kit/generated/root.svelte[22m
+[2m23:21:33[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2m.svelte-kit/generated/root.svelte[22m
+[2m23:25:16[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/routes/layout.css[22m
+[2m23:25:16[22m [36m[1m[vite][22m[39m [34m[2m(ssr)[22m[39m [32mpage reload [39m[2msrc/routes/layout.css[22m

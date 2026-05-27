@@ -1,5 +1,6 @@
 ﻿<script lang="ts">
 	import { gsap } from 'gsap';
+	import Lenis from 'lenis';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { SplitText } from 'gsap/SplitText';
 
@@ -27,6 +28,29 @@
 	$effect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		gsap.registerPlugin(SplitText);
+
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		let lenis: Lenis | undefined;
+		let lenisFrame = 0;
+
+		if (!prefersReducedMotion) {
+			lenis = new Lenis({
+				duration: 1.15,
+				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+				smoothWheel: true,
+				wheelMultiplier: 0.85,
+				touchMultiplier: 1.25
+			});
+
+			lenis.on('scroll', ScrollTrigger.update);
+
+			function updateSmoothScroll(time: number) {
+				lenis?.raf(time);
+				lenisFrame = requestAnimationFrame(updateSmoothScroll);
+			}
+
+			lenisFrame = requestAnimationFrame(updateSmoothScroll);
+		}
 
 		function setFixedLayerVisible(selector: string, visible: boolean, display = 'block') {
 			gsap.set(selector, {
@@ -216,6 +240,15 @@
 				scrub: true
 			}
 		});
+
+		return () => {
+			if (lenisFrame) {
+				cancelAnimationFrame(lenisFrame);
+			}
+
+			lenis?.destroy();
+			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+		};
 	});
 </script>
 
@@ -224,7 +257,7 @@
 		class="clouds pointer-events-none fixed top-0 z-20 hidden h-screen w-screen flex-wrap items-center justify-center"
 	>
 		{#each { length: 8 } as _, i (i)}
-			<img src={cloud} alt="Облако" class="cloud z-20 scale-200 opacity-0 pointer-events-none" />
+			<img src={cloud} alt="Облако" class="cloud pointer-events-none z-20 scale-200 opacity-0" />
 		{/each}
 	</div>
 	<div class="stones-layer pointer-events-none fixed top-0 z-20 flex">
@@ -238,31 +271,55 @@
 			class="relative z-10 mt-20 w-40 drop-shadow-2xl drop-shadow-amber-600"
 		/>
 		<header class="z-10 font-runic text-8xl font-bold drop-shadow-svelte">свелтпобеда.рф</header>
-		<img src={viking0} alt="" class="bg-viking-0 image-fade-y absolute top-0 h-full pointer-events-none" />
+		<img
+			src={viking0}
+			alt=""
+			class="bg-viking-0 image-fade-y pointer-events-none absolute top-0 h-full"
+		/>
 	</div>
 	<img src={viking1} alt="" class="bg-viking-1 image-fade-y h-screen snap-start" />
 	<img
 		src={cloudsBlock}
 		alt=""
-		class="bg-clouds image-fade-y z-10 -mt-50 -mb-50 w-screen snap-center pointer-events-none"
+		class="bg-clouds image-fade-y pointer-events-none z-10 -mt-50 -mb-50 w-screen snap-center"
 	/>
 	<img
 		src={boat}
 		alt=""
 		class="boat pointer-events-none fixed -top-full z-20 hidden h-screen drop-shadow-2xl drop-shadow-black"
 	/>
-	<img src={viking2} alt="" class="bg-viking-2 image-fade-y h-screen snap-start pointer-events-none" />
-	<img src={waterTexture} alt="" class="water image-fade-y h-screen snap-start pointer-events-none" />
+	<img
+		src={viking2}
+		alt=""
+		class="bg-viking-2 image-fade-y pointer-events-none h-screen snap-start"
+	/>
+	<img
+		src={waterTexture}
+		alt=""
+		class="water image-fade-y pointer-events-none h-screen snap-start"
+	/>
 	<div class="viking-3-section relative flex h-screen w-screen snap-start justify-center">
-		<img src={viking3} alt="" class="bg-viking-3 h-screen w-auto pointer-events-none" />
-		<img src={darkTexture} alt="" class="dark-texture absolute inset-0 h-screen w-screen pointer-events-none" />
+		<img src={viking3} alt="" class="bg-viking-3 pointer-events-none h-screen w-auto" />
+		<img
+			src={darkTexture}
+			alt=""
+			class="dark-texture pointer-events-none absolute inset-0 h-screen w-screen"
+		/>
 	</div>
 </div>
 <div class="w-screen bg-[#191511]">
 	<img src={darkTexture} alt="" class="image-fade-bottom h-screen w-screen" />
-	<img src={viking4} alt="" class="bg-viking-4 image-fade-both h-screen snap-start pointer-events-none" />
-	<img src={viking5} alt="" class="bg-viking-5 image-fade-top h-screen snap-start pointer-events-none" />
-	<div class="viking-6-scene relative h-screen w-screen snap-start pointer-events-none">
+	<img
+		src={viking4}
+		alt=""
+		class="bg-viking-4 image-fade-both pointer-events-none h-screen snap-start"
+	/>
+	<img
+		src={viking5}
+		alt=""
+		class="bg-viking-5 image-fade-top pointer-events-none h-screen snap-start"
+	/>
+	<div class="viking-6-scene pointer-events-none relative h-screen w-screen snap-start">
 		<img src={viking6} alt="" class="bg-viking-6 h-screen" />
 		<div
 			class="viking-6-light-mask pointer-events-none absolute top-0 h-full w-full bg-transparent"

@@ -1,0 +1,65 @@
+- generic [ref=e2]:
+  - banner [ref=e5]: свелтпобеда.рф
+  - banner [ref=e10]:
+    - generic [ref=e12]: велтпобеда
+    - generic [ref=e13]: уже 9.716595056970 лет
+  - generic [ref=e15]:
+    - generic [ref=e16]:
+      - heading "Почему 2026 это год очередной свелтпобеды?" [level=2] [ref=e18]
+      - list [ref=e19]:
+        - listitem [ref=e20]:
+          - generic [ref=e21]: "1"
+          - generic [ref=e22]: Компилятор всё понял, а ты потом.
+        - listitem [ref=e23]:
+          - generic [ref=e24]: "2"
+          - generic [ref=e25]: Virtual DOM не умер, он просто не прошёл tree-shaking.
+        - listitem [ref=e26]:
+          - generic [ref=e27]: "3"
+          - generic [ref=e28]: Нет useEffect, нет страданий, нет лишних созвонов.
+        - listitem [ref=e29]:
+          - generic [ref=e30]: "4"
+          - generic [ref=e31]: $state выглядит как заговор, но работает как отпуск.
+        - listitem [ref=e32]:
+          - generic [ref=e33]: "5"
+          - generic [ref=e34]: HTML, CSS и JS наконец-то сидят в одном файле и не дерутся.
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: 3 928 924 644
+          - generic [ref=e38]: скомпилировано реактивностей
+        - generic [ref=e39]:
+          - generic [ref=e40]: 272 002 475
+          - generic [ref=e41]: уничтожено Virtual DOM
+        - generic [ref=e42]:
+          - generic [ref=e43]: 12 693 448 851
+          - generic [ref=e44]: байт рантайма не доставлено пользователю
+      - link "потрогать свелтпобеду руками" [ref=e46] [cursor=pointer]:
+        - /url: https://svelte.dev/playground
+    - generic [ref=e47]:
+      - generic:
+        - generic: $state
+        - generic: DOM--
+        - generic: "{#if}"
+        - generic: compile()
+      - button "Rich Harris" [ref=e48] [cursor=pointer]:
+        - img "Rich Harris" [ref=e49]
+  - generic [ref=e50]:
+    - generic [ref=e51]:
+      - img "svelte meme" [ref=e52]
+      - img "svelte meme" [ref=e53]
+      - img "svelte meme" [ref=e54]
+      - img "svelte meme" [ref=e55]
+      - img "svelte meme" [ref=e56]
+      - img "svelte meme" [ref=e57]
+      - img "svelte meme" [ref=e58]
+    - contentinfo [ref=e59]:
+      - generic [ref=e60]:
+        - text: created by
+        - link "@sherstd" [ref=e61] [cursor=pointer]:
+          - /url: https://t.me/sherstd
+        - text: "&"
+        - link "@KirillUdaltsov" [ref=e62] [cursor=pointer]:
+          - /url: https://t.me/KirillUdaltsov
+      - generic [ref=e63]:
+        - img "Svelte logo" [ref=e64]
+        - link "свелтпобеда.рф" [ref=e65] [cursor=pointer]:
+          - /url: https://свелтпобеда.рф
