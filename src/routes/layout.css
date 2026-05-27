@@ -136,11 +136,18 @@
 	}
 	html {
 		@apply font-sans;
-		scroll-snap-type: y mandatory;
 		scroll-behavior: smooth;
+		scroll-snap-type: y mandatory;
 	}
 	a {
 		color: var(--color-svelte);
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		scroll-snap-type: y proximity;
+		overscroll-behavior-y: contain;
 	}
 }
 
