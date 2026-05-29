@@ -10,6 +10,7 @@
 	import LightScene from '$lib/components/scenes/LightScene.svelte';
 	import StonesLayer from '$lib/components/scenes/StonesLayer.svelte';
 
+	let stonesLayer = $state<HTMLElement>();
 	let stones1 = $state<HTMLElement>();
 	let stones2 = $state<HTMLElement>();
 	let viking1 = $state<HTMLElement>();
@@ -37,6 +38,7 @@
 
 	onMount(() => {
 		return setupHomeAnimations({
+			stonesLayer: stonesLayer!,
 			stones1: stones1!,
 			stones2: stones2!,
 			viking1: viking1!,
@@ -66,7 +68,7 @@
 </script>
 
 <div class="gallery flex flex-col items-center bg-[#FAE8D5]">
-	<StonesLayer bind:stones1 bind:stones2 />
+	<StonesLayer bind:stonesLayer bind:stones1 bind:stones2 />
 	<IntroScene bind:viking1 />
 	<CloudsScene bind:cloudsLayer bind:clouds bind:cloudsTrigger />
 	<BoatScene bind:boat bind:water />

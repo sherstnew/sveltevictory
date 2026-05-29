@@ -3,6 +3,7 @@ import Lenis from 'lenis';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export type HomeAnimationRefs = {
+	stonesLayer: HTMLElement;
 	stones1: HTMLElement;
 	stones2: HTMLElement;
 	viking1: HTMLElement;
@@ -54,10 +55,100 @@ function killAnimation(animation: GsapAnimation) {
 	animation.kill();
 }
 
+function isTopScene() {
+	return window.scrollY <= window.innerHeight * 0.75;
+}
+
+function resetScrollPosition() {
+	if ('scrollRestoration' in history) {
+		history.scrollRestoration = 'manual';
+	}
+
+	const html = document.documentElement;
+	const previousScrollBehavior = html.style.scrollBehavior;
+	const previousScrollSnapType = html.style.scrollSnapType;
+	const timeouts: number[] = [];
+	let frame = 0;
+	let frameId = 0;
+
+	html.style.scrollBehavior = 'auto';
+	html.style.scrollSnapType = 'none';
+
+	function jumpToTop() {
+		html.scrollTop = 0;
+
+		if (document.body) {
+			document.body.scrollTop = 0;
+		}
+
+		window.scrollTo(0, 0);
+	}
+
+	function keepTopForBootFrames() {
+		jumpToTop();
+		frame += 1;
+
+		if (frame < 12) {
+			frameId = requestAnimationFrame(keepTopForBootFrames);
+			return;
+		}
+
+		html.style.scrollBehavior = previousScrollBehavior;
+		html.style.scrollSnapType = previousScrollSnapType;
+	}
+
+	jumpToTop();
+	frameId = requestAnimationFrame(keepTopForBootFrames);
+	timeouts.push(window.setTimeout(jumpToTop, 120));
+	timeouts.push(window.setTimeout(jumpToTop, 360));
+
+	return () => {
+		if (frameId) {
+			cancelAnimationFrame(frameId);
+		}
+
+		timeouts.forEach((timeout) => clearTimeout(timeout));
+		html.style.scrollBehavior = previousScrollBehavior;
+		html.style.scrollSnapType = previousScrollSnapType;
+	};
+}
+
+function setInitialAnimationState(refs: HomeAnimationRefs) {
+	gsap.set([refs.stonesLayer, refs.cloudsLayer, refs.boat, refs.darkPassLayer, refs.lightSection], {
+		autoAlpha: 0,
+		display: 'none'
+	});
+
+	gsap.set(refs.clouds, {
+		x: -1000,
+		opacity: 0
+	});
+
+	gsap.set(refs.boat, {
+		yPercent: 0
+	});
+
+	gsap.set([refs.stones1, refs.stones2], {
+		xPercent: 0,
+		yPercent: 0,
+		opacity: 1
+	});
+
+	gsap.set(refs.lightScreen, {
+		clipPath: 'inset(0% 0% 0% 0%)'
+	});
+
+	gsap.set([refs.light, refs.lightWave, refs.viking7], {
+		opacity: 0
+	});
+}
+
 export function setupHomeAnimations(refs: HomeAnimationRefs) {
 	gsap.registerPlugin(ScrollTrigger);
+	setInitialAnimationState(refs);
 
 	const animations: GsapAnimation[] = [];
+	const releaseScrollBootLock = resetScrollPosition();
 	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	let lenis: Lenis | undefined;
 	let lenisFrame = 0;
@@ -96,6 +187,38 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 			}
 		})
 	);
+
+	const stonesVisibility = ScrollTrigger.create({
+		trigger: refs.viking1,
+		start: 'top bottom',
+		end: '+=200%',
+		onUpdate: (self) => {
+			setFixedLayerVisible(refs.stonesLayer, isTopScene() || self.progress < 1, 'flex');
+		},
+		onRefresh: (self) => {
+			setFixedLayerVisible(refs.stonesLayer, isTopScene() || self.progress < 1, 'flex');
+		},
+		onLeave: () => setFixedLayerVisible(refs.stonesLayer, false, 'flex'),
+		onLeaveBack: () => setFixedLayerVisible(refs.stonesLayer, true, 'flex')
+	});
+
+	if (isTopScene()) {
+		animations.push(
+			gsap.fromTo(
+				refs.stonesLayer,
+				{
+					autoAlpha: 0,
+					display: 'flex'
+				},
+				{
+					autoAlpha: 1,
+					duration: 1.15,
+					delay: 0.22,
+					ease: 'power2.out'
+				}
+			)
+		);
+	}
 
 	animations.push(
 		gsap.to(refs.stones2, {
@@ -464,6 +587,8 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 		}
 
 		lenis?.destroy();
+		releaseScrollBootLock();
+		stonesVisibility.kill();
 		animations.forEach(killAnimation);
 	};
 }

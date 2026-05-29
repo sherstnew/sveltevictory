@@ -12,7 +12,9 @@
 		alt=""
 		class="relative z-10 mt-20 w-40 drop-shadow-2xl drop-shadow-amber-600"
 	/>
-	<header class="z-10 font-runic text-8xl font-bold drop-shadow-svelte">свелтпобеда.рф</header>
+	<header class="intro-title z-10 font-runic text-8xl font-bold drop-shadow-svelte">
+		свелтпобеда.рф
+	</header>
 	<img
 		src={viking0}
 		alt=""
@@ -25,3 +27,26 @@
 	class="bg-viking-1 image-fade-y h-screen snap-start"
 	bind:this={viking1}
 />
+
+<style>
+	.intro-title {
+		opacity: 0;
+		transform: translateY(0.8rem) scale(0.985);
+		animation: intro-title-in 1.1s 0.28s ease-out forwards;
+	}
+
+	@keyframes intro-title-in {
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.intro-title {
+			opacity: 1;
+			transform: none;
+			animation: none;
+		}
+	}
+</style>

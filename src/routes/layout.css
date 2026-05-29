@@ -5,7 +5,7 @@
 @font-face {
 	font-family: 'Runic';
 	src: url('../lib/assets/fonts/Runic.ttf') format('truetype');
-	font-display: swap;
+	font-display: block;
 }
 
 @custom-variant dark (&:is(.dark *));
