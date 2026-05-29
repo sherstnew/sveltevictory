@@ -6,6 +6,19 @@
 	import richHarrisPhoto from '$lib/assets/rich-harris.png';
 	import richHarrisPhotoSmile from '$lib/assets/rich-harris-smile.png';
 
+	type Particle = {
+		id: number;
+		type: 'logo' | 'text';
+		label: string;
+		angle: number;
+		distance: number;
+		rotation: number;
+		rotationDelta: number;
+		scale: number;
+	};
+
+	let { svelteVictory = $bindable<HTMLElement>() } = $props();
+
 	let now = $state(Date.now());
 	const startDate = new Date('2016-10-29T00:00:00').getTime();
 
@@ -33,11 +46,12 @@
 		'HTML, CSS и JS наконец-то сидят в одном файле и не дерутся.'
 	];
 	const victoryBenefits = Array.from({ length: 5 }, (_, index) => `победа ${index + 1}`);
+	const particleLabels = ['$', 'state', 'derived', 'effect', 'Virtual DOM -1', 'победа'];
 
-	let logosContainer: HTMLElement;
 	let countersCard: HTMLDivElement;
 	let benefitsList: HTMLOListElement;
 	let richClicks = $state(0);
+	let particles = $state<Particle[]>([]);
 
 	const isVictoryMode = $derived(richClicks >= 7);
 	const visibleBenefits = $derived(isVictoryMode ? victoryBenefits : defaultBenefits);
@@ -45,6 +59,58 @@
 	const compiledReactivities = $derived(Math.floor(secondsSinceStart * 13 + richClicks * 777));
 	const destroyedVirtualDom = $derived(Math.floor(secondsSinceStart * 0.9 + richClicks * 404));
 	const undeliveredRuntimeBytes = $derived(Math.floor(secondsSinceStart * 42 + richClicks * 8192));
+
+	function removeParticle(id: number) {
+		particles = particles.filter((particle) => particle.id !== id);
+	}
+
+	function animateParticle(node: HTMLElement, particle: Particle) {
+		const x = Math.cos(particle.angle) * particle.distance;
+		const y = Math.sin(particle.angle) * particle.distance;
+
+		const tl = gsap.timeline({
+			onComplete: () => removeParticle(particle.id)
+		});
+
+		tl.fromTo(
+			node,
+			{
+				left: '50%',
+				top: '50%',
+				xPercent: -50,
+				yPercent: -50,
+				x: 0,
+				y: 0,
+				opacity: 0,
+				scale: 0.2,
+				rotation: particle.rotation
+			},
+			{
+				x,
+				y,
+				opacity: 1,
+				rotation: `+=${particle.rotationDelta}`,
+				scale: particle.scale,
+				duration: 0.72,
+				ease: 'back.out(2.4)'
+			}
+		);
+
+		tl.to(node, {
+			y: '-=48',
+			opacity: 0,
+			scale: 0,
+			filter: 'blur(6px)',
+			duration: 0.55,
+			ease: 'power2.in'
+		});
+
+		return {
+			destroy() {
+				tl.kill();
+			}
+		};
+	}
 
 	function animateRichHarris() {
 		richClicks += 1;
@@ -79,99 +145,34 @@
 			);
 		}
 
-		if (logosContainer) {
-			const id = Math.round(Math.random() * 100000);
-			const currentElements: HTMLElement[] = [];
-			const particles = ['$', 'state', 'derived', 'effect', 'Virtual DOM -1', 'победа'];
+		const currentParticles: Particle[] = Array.from({ length: 8 }, (_, index) => ({
+			id: Date.now() + Math.round(Math.random() * 100000) + index,
+			type: index % 3 === 0 ? 'logo' : 'text',
+			label: particleLabels[index % particleLabels.length],
+			angle: (Math.PI * 2 * index) / 8 + Math.random() * 0.8,
+			distance: Math.random() * 180 + 130,
+			rotation: Math.random() * 120 - 60,
+			rotationDelta: Math.random() * 520 - 260,
+			scale: Math.random() * 0.7 + 0.85
+		}));
 
-			for (let i = 0; i < 8; i++) {
-				const element =
-					i % 3 === 0 ? document.createElement('img') : document.createElement('span');
-				element.classList.add(`svelte-logo-${id}`, 'absolute', 'opacity-0', 'drop-shadow-2xl');
-
-				if (element instanceof HTMLImageElement) {
-					element.src = svelteLogo;
-					element.alt = 'Svelte Logo';
-					element.classList.add('w-14', 'lg:w-20');
-				} else {
-					element.textContent = particles[i % particles.length];
-					element.classList.add(
-						'rounded-full',
-						'bg-svelte',
-						'px-3',
-						'py-1',
-						'font-mono',
-						'text-sm',
-						'font-black',
-						'text-white',
-						'lg:text-base'
-					);
-				}
-
-				logosContainer.append(element);
-				currentElements.push(element);
-			}
-
-			const tl = gsap.timeline({
-				onComplete: () => {
-					currentElements.forEach((el) => {
-						logosContainer.removeChild(el);
-					});
-				}
-			});
-
-			currentElements.forEach((element, index) => {
-				const angle = (Math.PI * 2 * index) / currentElements.length + Math.random() * 0.8;
-				const distance = Math.random() * 180 + 130;
-
-				gsap.set(element, {
-					left: '50%',
-					top: '50%',
-					xPercent: -50,
-					yPercent: -50,
-					scale: 0.2,
-					rotation: Math.random() * 120 - 60
-				});
-
-				tl.to(
-					element,
-					{
-						x: Math.cos(angle) * distance,
-						y: Math.sin(angle) * distance,
-						opacity: 1,
-						rotation: `+=${Math.random() * 520 - 260}`,
-						scale: Math.random() * 0.7 + 0.85,
-						duration: 0.72,
-						ease: 'back.out(2.4)'
-					},
-					'<'
-				);
-			});
-
-			tl.to(`.svelte-logo-${id}`, {
-				y: '-=48',
-				opacity: 0,
-				scale: 0,
-				filter: 'blur(6px)',
-				duration: 0.55,
-				ease: 'power2.in'
-			});
-		}
+		particles = [...particles, ...currentParticles];
 	}
 
-	let RichHarrisUrl: string = $state(richHarrisPhoto);
+	let richHarrisUrl: string = $state(richHarrisPhoto);
 
 	function toggleRichHarris(mode: 'out' | 'in') {
 		if (mode == 'out') {
-			RichHarrisUrl = richHarrisPhoto;
+			richHarrisUrl = richHarrisPhoto;
 		} else {
-			RichHarrisUrl = richHarrisPhotoSmile;
+			richHarrisUrl = richHarrisPhotoSmile;
 		}
 	}
 </script>
 
 <div
 	class="sveltevictory flex h-screen w-screen snap-start flex-col items-center justify-center gap-8"
+	bind:this={svelteVictory}
 >
 	<img src={conv} alt="" class="image-fade-x xl:h-1/2" />
 	<header
@@ -190,15 +191,13 @@
 	class="benefits relative flex min-h-screen w-screen snap-start items-center justify-center overflow-hidden px-4 py-8 sm:px-6 lg:h-screen lg:px-10 lg:py-10 xl:px-16"
 >
 	<div
-		class="benefits-shell relative z-10 w-full max-w-7xl flex items-stretch gap-3 lg:max-h-[85vh] lg:gap-6 xl:gap-4"
+		class="benefits-shell relative z-10 flex w-full max-w-7xl items-stretch gap-3 lg:max-h-[85vh] lg:gap-6 xl:gap-4"
 	>
 		<section
 			class="benefits-copy flex min-w-0 flex-col justify-start gap-5 rounded-2xl p-4 sm:p-6 lg:p-7"
 		>
 			<header class="flex flex-col gap-2 leading-tight">
-				<h2
-					class="text-xl font-black text-balance uppercase sm:text-2xl lg:text-3xl"
-				>
+				<h2 class="text-xl font-black text-balance uppercase sm:text-2xl lg:text-3xl">
 					Почему {currentYear} это год очередной <i class="text-svelte">свелтпобеды?</i>
 				</h2>
 			</header>
@@ -218,7 +217,7 @@
 				{/each}
 			</ol>
 
-			<div class="grid gap-3 sm:grid-cols-3 rounded-2xl" bind:this={countersCard}>
+			<div class="grid gap-3 rounded-2xl sm:grid-cols-3" bind:this={countersCard}>
 				<div class="metric-card">
 					<div class="font-mono text-xl font-black text-svelte tabular-nums sm:text-2xl">
 						{compiledReactivities.toLocaleString('ru-RU')}
@@ -255,7 +254,6 @@
 
 		<section
 			class="rich-stage relative flex max-h-5/6 min-h-[340px] items-center justify-center overflow-hidden rounded-2xl p-5 sm:min-h-[390px] lg:min-h-0 lg:p-7"
-			bind:this={logosContainer}
 		>
 			<div class="rich-orbit rich-orbit-one"></div>
 			<div class="rich-orbit rich-orbit-two"></div>
@@ -266,13 +264,30 @@
 				<span>{'{#if}'}</span>
 				<span>compile()</span>
 			</div>
+			{#each particles as particle (particle.id)}
+				{#if particle.type === 'logo'}
+					<img
+						src={svelteLogo}
+						alt="Svelte Logo"
+						class="absolute w-14 opacity-0 drop-shadow-2xl lg:w-20"
+						use:animateParticle={particle}
+					/>
+				{:else}
+					<span
+						class="absolute rounded-full bg-svelte px-3 py-1 font-mono text-sm font-black text-white opacity-0 drop-shadow-2xl lg:text-base"
+						use:animateParticle={particle}
+					>
+						{particle.label}
+					</span>
+				{/if}
+			{/each}
 			<button
 				onclick={animateRichHarris}
 				class="rich-button relative z-10 flex h-[300px] w-full items-center justify-center sm:h-[360px] lg:h-full"
 				onmouseenter={() => toggleRichHarris('in')}
 				onmouseleave={() => toggleRichHarris('out')}
 			>
-				<img src={RichHarrisUrl} alt="Rich Harris" class="rich-photo max-h-full object-contain" />
+				<img src={richHarrisUrl} alt="Rich Harris" class="rich-photo max-h-full object-contain" />
 			</button>
 		</section>
 	</div>
@@ -430,18 +445,6 @@
 	.rich-code-rain span:nth-child(4) {
 		--x: 84%;
 		animation-delay: 2.4s;
-	}
-
-	@keyframes aura-spin {
-		to {
-			transform: rotate(360deg);
-		}
-	}
-
-	@keyframes aura-float {
-		to {
-			transform: translate3d(-2rem, -1.2rem, 0) scale(1.08);
-		}
 	}
 
 	@keyframes rich-idle {
