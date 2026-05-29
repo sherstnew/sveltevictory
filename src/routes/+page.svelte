@@ -20,8 +20,16 @@
 	let water = $state<HTMLElement>();
 	let darkTexture = $state<HTMLElement>();
 	let darkScene = $state<HTMLElement>();
+	let viking4Scene = $state<HTMLElement>();
+	let viking5Scene = $state<HTMLElement>();
+	let viking6Scene = $state<HTMLElement>();
+	let darkPassLayer = $state<HTMLElement>();
+	let darkPassSmoke = $state<HTMLElement>();
+	let torchGlow = $state<HTMLElement>();
+	let runesVeil = $state<HTMLElement>();
 	let lightScreen = $state<HTMLElement>();
 	let lightSection = $state<HTMLElement>();
+	let lightWave = $state<HTMLElement>();
 	let light = $state<HTMLElement>();
 	let viking6LightMask = $state<HTMLElement>();
 	let viking7 = $state<HTMLElement>();
@@ -39,8 +47,16 @@
 			water: water!,
 			darkTexture: darkTexture!,
 			darkScene: darkScene!,
+			viking4Scene: viking4Scene!,
+			viking5Scene: viking5Scene!,
+			viking6Scene: viking6Scene!,
+			darkPassLayer: darkPassLayer!,
+			darkPassSmoke: darkPassSmoke!,
+			torchGlow: torchGlow!,
+			runesVeil: runesVeil!,
 			lightScreen: lightScreen!,
 			lightSection: lightSection!,
+			lightWave: lightWave!,
 			light: light!,
 			viking6LightMask: viking6LightMask!,
 			viking7: viking7!,
@@ -56,6 +72,20 @@
 	<BoatScene bind:boat bind:water />
 	<DarkScene bind:darkScene bind:darkTexture />
 </div>
-<LightScene bind:lightScreen bind:lightSection bind:light bind:viking6LightMask bind:viking7 />
+<LightScene
+	bind:viking4Scene
+	bind:viking5Scene
+	bind:viking6Scene
+	bind:darkPassLayer
+	bind:darkPassSmoke
+	bind:torchGlow
+	bind:runesVeil
+	bind:lightScreen
+	bind:lightSection
+	bind:lightWave
+	bind:light
+	bind:viking6LightMask
+	bind:viking7
+/>
 <SvelteVictory bind:svelteVictory />
 <Memes />

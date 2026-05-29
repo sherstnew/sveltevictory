@@ -1,7 +1,7 @@
 <script lang="ts">
 	import jetaLogo from '$lib/assets/jeta.png';
-	import viking0 from '$lib/assets/story/0.png';
-	import viking1Image from '$lib/assets/story/1.png';
+	import viking0 from '$lib/assets/story/0.avif';
+	import viking1Image from '$lib/assets/story/1.avif';
 
 	let { viking1 = $bindable<HTMLElement>() } = $props();
 </script>

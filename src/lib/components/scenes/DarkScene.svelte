@@ -1,6 +1,6 @@
 <script lang="ts">
 	import darkTextureImage from '$lib/assets/textures/dark-texture.png';
-	import viking3 from '$lib/assets/story/3.png';
+	import viking3 from '$lib/assets/story/3.avif';
 
 	let { darkScene = $bindable<HTMLElement>(), darkTexture = $bindable<HTMLElement>() } = $props();
 </script>

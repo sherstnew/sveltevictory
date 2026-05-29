@@ -13,8 +13,16 @@ export type HomeAnimationRefs = {
 	water: HTMLElement;
 	darkTexture: HTMLElement;
 	darkScene: HTMLElement;
+	viking4Scene: HTMLElement;
+	viking5Scene: HTMLElement;
+	viking6Scene: HTMLElement;
+	darkPassLayer: HTMLElement;
+	darkPassSmoke: HTMLElement;
+	torchGlow: HTMLElement;
+	runesVeil: HTMLElement;
 	lightScreen: HTMLElement;
 	lightSection: HTMLElement;
+	lightWave: HTMLElement;
 	light: HTMLElement;
 	viking6LightMask: HTMLElement;
 	viking7: HTMLElement;
@@ -174,6 +182,137 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 		})
 	);
 
+	const darkPassTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: refs.viking4Scene,
+			start: 'top center',
+			endTrigger: refs.viking6Scene,
+			end: 'center center',
+			scrub: true,
+			onRefresh: syncFixedLayer(refs.darkPassLayer),
+			onUpdate: syncFixedLayer(refs.darkPassLayer)
+		}
+	});
+
+	darkPassTl.set([refs.viking4Scene, refs.viking5Scene, refs.viking6Scene], {
+		transformOrigin: '50% 50%',
+		filter: 'brightness(1) contrast(1)'
+	});
+
+	darkPassTl.fromTo(
+		refs.darkPassSmoke,
+		{
+			opacity: 0,
+			yPercent: 8,
+			scale: 1.08
+		},
+		{
+			opacity: 0.34,
+			yPercent: -8,
+			scale: 1.16,
+			duration: 2.4,
+			ease: 'none'
+		}
+	);
+
+	darkPassTl.to(
+		refs.viking4Scene,
+		{
+			scale: 1.05,
+			filter: 'brightness(0.74) contrast(1.12)',
+			duration: 1.2,
+			ease: 'none'
+		},
+		'<'
+	);
+
+	darkPassTl.fromTo(
+		refs.runesVeil,
+		{
+			opacity: 0,
+			yPercent: 6,
+			scale: 0.96
+		},
+		{
+			opacity: 0.62,
+			yPercent: -5,
+			scale: 1.02,
+			duration: 1.4,
+			ease: 'power1.inOut'
+		},
+		'<35%'
+	);
+
+	darkPassTl.to(refs.runesVeil, {
+		opacity: 0,
+		yPercent: -16,
+		scale: 1.08,
+		duration: 1.2,
+		ease: 'power1.in'
+	});
+
+	darkPassTl.fromTo(
+		refs.torchGlow,
+		{
+			opacity: 0,
+			xPercent: -42,
+			yPercent: 14,
+			scale: 0.82
+		},
+		{
+			opacity: 0.8,
+			xPercent: 74,
+			yPercent: -18,
+			scale: 1.2,
+			duration: 1.9,
+			ease: 'power1.inOut'
+		},
+		'<20%'
+	);
+
+	darkPassTl.to(refs.viking5Scene, {
+		scale: 1.04,
+		filter: 'brightness(0.78) contrast(1.12)',
+		duration: 1.3,
+		ease: 'none'
+	});
+
+	darkPassTl.to(
+		refs.torchGlow,
+		{
+			opacity: 0,
+			xPercent: 118,
+			yPercent: -36,
+			scale: 0.72,
+			duration: 1.1,
+			ease: 'power2.in'
+		},
+		'<45%'
+	);
+
+	darkPassTl.to(
+		refs.darkPassSmoke,
+		{
+			opacity: 0,
+			yPercent: -18,
+			duration: 1.2,
+			ease: 'power2.in'
+		},
+		'<35%'
+	);
+
+	darkPassTl.to(
+		refs.viking6Scene,
+		{
+			filter: 'brightness(1.08) contrast(1.05)',
+			duration: 1,
+			ease: 'power1.out'
+		},
+		'<'
+	);
+
+	animations.push(darkPassTl);
+
 	const lightTl = gsap.timeline({
 		scrollTrigger: {
 			trigger: refs.lightScreen,
@@ -185,31 +324,46 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 		}
 	});
 
-	lightTl.to(refs.light, {
-		opacity: 1,
-		duration: 0.1
+	lightTl.set(refs.lightSection, {
+		background: 'transparent'
 	});
 
-	lightTl.to(refs.light, {
-		scale: 70,
-		duration: 2,
-		ease: 'power4.out'
-	});
+	lightTl.fromTo(
+		refs.lightWave,
+		{
+			opacity: 0,
+			scale: 0.4
+		},
+		{
+			opacity: 1,
+			scale: 70,
+			duration: 2.2,
+			ease: 'power4.out'
+		}
+	);
+
+	lightTl.to(
+		refs.light,
+		{
+			opacity: 1,
+			duration: 0.1
+		},
+		'<'
+	);
 
 	lightTl.to(refs.lightSection, {
 		background: 'white',
-		duration: 1
+		duration: 1.2
+	});
+
+	lightTl.to(refs.lightWave, {
+		opacity: 1,
+		duration: 0.45
 	});
 
 	lightTl.to(refs.light, {
 		opacity: 0,
-		duration: 1
-	});
-
-	lightTl.to(refs.lightSection, {
-		background: 'transparent',
-		duration: 1,
-		ease: 'power4.in'
+		duration: 0.8
 	});
 
 	lightTl.to(
@@ -221,22 +375,43 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 		'<'
 	);
 
-	lightTl.to(
-		refs.lightScreen,
-		{
-			background: 'white',
-			duration: 1
-		},
-		'<'
-	);
+	lightTl.set(refs.viking7, {
+		opacity: 0,
+		scale: 1.04,
+		filter: 'blur(12px)',
+		transformOrigin: '50% 45%'
+	});
+
+	lightTl.set(refs.lightScreen, {
+		background: 'white'
+	});
+
+	lightTl.to(refs.lightWave, {
+		opacity: 0,
+		duration: 1.1,
+		ease: 'power2.in'
+	});
 
 	lightTl.to(
 		refs.viking7,
 		{
 			opacity: 1,
-			duration: 1
+			scale: 1,
+			filter: 'blur(0px)',
+			duration: 2.2,
+			ease: 'power2.out'
 		},
 		'<'
+	);
+
+	lightTl.to(
+		refs.lightSection,
+		{
+			background: 'transparent',
+			duration: 1.1,
+			ease: 'power2.in'
+		},
+		'<65%'
 	);
 
 	animations.push(lightTl);
@@ -245,7 +420,7 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 		scrollTrigger: {
 			trigger: refs.svelteVictory,
 			start: 'top bottom',
-			end: '+=70%',
+			end: '+=120%',
 			scrub: true
 		}
 	});
@@ -256,11 +431,18 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 	});
 
 	finalSceneTl.to(refs.viking7, {
+		scale: 1.025,
+		yPercent: -1,
+		duration: 0.85,
+		ease: 'none'
+	});
+
+	finalSceneTl.to(refs.viking7, {
 		scale: 1.12,
 		yPercent: -8,
 		opacity: 0,
 		filter: 'blur(18px)',
-		duration: 1,
+		duration: 1.15,
 		ease: 'power2.out'
 	});
 
@@ -268,10 +450,10 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 		refs.lightScreen,
 		{
 			clipPath: 'inset(0% 0% 100% 0%)',
-			duration: 1,
+			duration: 1.05,
 			ease: 'power2.inOut'
 		},
-		'<20%'
+		'<35%'
 	);
 
 	animations.push(finalSceneTl);
