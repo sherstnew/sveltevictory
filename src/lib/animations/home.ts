@@ -241,20 +241,40 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 
 	animations.push(lightTl);
 
-	animations.push(
-		gsap.to(refs.viking7, {
-			scale: 0,
-			duration: 2,
-			ease: 'none',
-			overwrite: 'auto',
-			scrollTrigger: {
-				trigger: refs.svelteVictory,
-				start: 'top bottom',
-				end: '+=50%',
-				scrub: true
-			}
-		})
+	const finalSceneTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: refs.svelteVictory,
+			start: 'top bottom',
+			end: '+=70%',
+			scrub: true
+		}
+	});
+
+	finalSceneTl.set(refs.viking7, {
+		transformOrigin: '50% 45%',
+		filter: 'blur(0px)'
+	});
+
+	finalSceneTl.to(refs.viking7, {
+		scale: 1.12,
+		yPercent: -8,
+		opacity: 0,
+		filter: 'blur(18px)',
+		duration: 1,
+		ease: 'power2.out'
+	});
+
+	finalSceneTl.to(
+		refs.lightScreen,
+		{
+			clipPath: 'inset(0% 0% 100% 0%)',
+			duration: 1,
+			ease: 'power2.inOut'
+		},
+		'<20%'
 	);
+
+	animations.push(finalSceneTl);
 
 	return () => {
 		if (lenisFrame) {
