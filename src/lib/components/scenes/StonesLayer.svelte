@@ -13,6 +13,8 @@
 	<img
 		src={stones1Image}
 		alt=""
+		width="768"
+		height="1024"
 		class="stones1 w-1/2"
 		bind:this={stones1}
 		loading="eager"
@@ -22,6 +24,8 @@
 	<img
 		src={stones2Image}
 		alt=""
+		width="768"
+		height="1024"
 		class="stones2 w-1/2"
 		bind:this={stones2}
 		loading="eager"

@@ -23,24 +23,48 @@
 </script>
 
 <div class="w-screen bg-[#191511]">
-	<img src={darkTexture} alt="" class="image-fade-bottom h-screen w-screen" />
+	<img
+		src={darkTexture}
+		alt=""
+		width="1672"
+		height="941"
+		class="image-fade-bottom h-screen w-screen object-cover"
+		loading="lazy"
+		decoding="async"
+	/>
 	<img
 		src={viking4}
 		alt=""
-		class="bg-viking-4 image-fade-both pointer-events-none h-screen snap-start"
+		width="1870"
+		height="841"
+		class="bg-viking-4 image-fade-both pointer-events-none h-screen w-screen snap-start object-cover"
 		bind:this={viking4Scene}
+		loading="lazy"
+		decoding="async"
 	/>
 	<img
 		src={viking5}
 		alt=""
-		class="bg-viking-5 image-fade-top pointer-events-none h-screen snap-start"
+		width="1870"
+		height="841"
+		class="bg-viking-5 image-fade-top pointer-events-none h-screen w-screen snap-start object-cover"
 		bind:this={viking5Scene}
+		loading="lazy"
+		decoding="async"
 	/>
 	<div
 		class="viking-6-scene pointer-events-none relative h-screen w-screen snap-start bg-white"
 		bind:this={viking6Scene}
 	>
-		<img src={viking6} alt="" class="bg-viking-6 h-screen" />
+		<img
+			src={viking6}
+			alt=""
+			width="1870"
+			height="841"
+			class="bg-viking-6 h-screen w-screen object-cover"
+			loading="lazy"
+			decoding="async"
+		/>
 		<div
 			class="viking-6-light-mask pointer-events-none absolute top-0 h-full w-full bg-transparent"
 			bind:this={viking6LightMask}
@@ -60,7 +84,16 @@
 		class="dark-pass-layer pointer-events-none fixed top-0 z-10 hidden h-screen w-screen overflow-hidden"
 		bind:this={darkPassLayer}
 	>
-		<img src={darkTexture} alt="" class="dark-pass-smoke h-full w-full" bind:this={darkPassSmoke} />
+		<img
+			src={darkTexture}
+			alt=""
+			width="1672"
+			height="941"
+			class="dark-pass-smoke h-full w-full"
+			bind:this={darkPassSmoke}
+			loading="lazy"
+			decoding="async"
+		/>
 		<div class="torch-glow" bind:this={torchGlow}></div>
 		<div class="runes-veil font-runic" bind:this={runesVeil} aria-hidden="true">
 			<span>свелтпобеда.рф</span>
@@ -72,8 +105,12 @@
 	<img
 		src={viking7Image}
 		alt=""
-		class="bg-viking-7 image-fade-both pointer-events-none h-screen opacity-0"
+		width="1870"
+		height="841"
+		class="bg-viking-7 image-fade-both pointer-events-none h-screen w-screen object-cover opacity-0"
 		bind:this={viking7}
+		loading="lazy"
+		decoding="async"
 	/>
 </div>
 

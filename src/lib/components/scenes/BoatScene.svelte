@@ -15,11 +15,19 @@
 <img
 	src={viking2}
 	alt=""
-	class="bg-viking-2 image-fade-y pointer-events-none h-screen snap-start"
+	width="1870"
+	height="841"
+	class="bg-viking-2 image-fade-y pointer-events-none h-screen w-screen snap-start object-cover"
+	loading="lazy"
+	decoding="async"
 />
 <img
 	src={waterTexture}
 	alt=""
-	class="water image-fade-y pointer-events-none h-screen snap-start"
+	width="2059"
+	height="941"
+	class="water image-fade-y pointer-events-none h-screen w-screen snap-start object-cover"
 	bind:this={water}
+	loading="lazy"
+	decoding="async"
 />

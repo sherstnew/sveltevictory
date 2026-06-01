@@ -9,12 +9,24 @@
 	class="viking-3-section relative flex h-screen w-screen snap-start justify-center"
 	bind:this={darkScene}
 >
-	<img src={viking3} alt="" class="bg-viking-3 pointer-events-none h-screen w-auto" />
+	<img
+		src={viking3}
+		alt=""
+		width="3059"
+		height="1375"
+		class="bg-viking-3 pointer-events-none h-screen w-screen object-cover"
+		loading="lazy"
+		decoding="async"
+	/>
 	<img
 		src={darkTextureImage}
 		alt=""
-		class="dark-texture pointer-events-none absolute inset-0 h-screen w-screen"
+		width="1672"
+		height="941"
+		class="dark-texture pointer-events-none absolute inset-0 h-screen w-screen object-cover"
 		bind:this={darkTexture}
+		loading="lazy"
+		decoding="async"
 	/>
 </div>
 

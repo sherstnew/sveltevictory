@@ -9,21 +9,30 @@
 	import meme6 from '$lib/assets/memes/6.png';
 	import meme7 from '$lib/assets/memes/7.png';
 
-	const memeImages: Record<string, string> = {
-		'1.png': meme1,
-		'2.png': meme2,
-		'3.png': meme3,
-		'4.png': meme4,
-		'5.png': meme5,
-		'6.png': meme6,
-		'7.png': meme7
+	const memeImages: Record<string, { src: string; width: number; height: number }> = {
+		'1.png': { src: meme1, width: 1080, height: 952 },
+		'2.png': { src: meme2, width: 500, height: 714 },
+		'3.png': { src: meme3, width: 576, height: 452 },
+		'4.png': { src: meme4, width: 640, height: 480 },
+		'5.png': { src: meme5, width: 500, height: 641 },
+		'6.png': { src: meme6, width: 1284, height: 943 },
+		'7.png': { src: meme7, width: 802, height: 500 }
 	};
 </script>
 
 <div class="memes snap-start p-5 lg:p-20">
 	<div class="w-full columns-1 gap-8 lg:columns-3">
 		{#each memes as meme (meme.file)}
-			<img src={memeImages[meme.file]} alt={meme.alt} class="mb-8 rounded-sm drop-shadow-2xl" />
+			{@const image = memeImages[meme.file]}
+			<img
+				src={image.src}
+				alt={meme.alt}
+				width={image.width}
+				height={image.height}
+				class="mb-8 rounded-sm drop-shadow-2xl"
+				loading="lazy"
+				decoding="async"
+			/>
 		{/each}
 	</div>
 	<footer class="mt-10 flex flex-col gap-4 lg:flex-row lg:justify-between">

@@ -17,14 +17,22 @@
 		<img
 			src={cloud}
 			alt="Облако"
+			width="1711"
+			height="870"
 			class="cloud pointer-events-none z-20 scale-200 opacity-0"
 			bind:this={clouds[i]}
+			loading="lazy"
+			decoding="async"
 		/>
 	{/each}
 </div>
 <img
 	src={cloudsBlock}
 	alt=""
+	width="1672"
+	height="1115"
 	class="bg-clouds image-fade-y pointer-events-none z-10 -mt-50 -mb-50 w-screen snap-center"
 	bind:this={cloudsTrigger}
+	loading="lazy"
+	decoding="async"
 />

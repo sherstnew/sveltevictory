@@ -271,6 +271,8 @@
 						alt="Svelte Logo"
 						class="absolute w-14 opacity-0 drop-shadow-2xl lg:w-20"
 						use:animateParticle={particle}
+						loading="lazy"
+						decoding="async"
 					/>
 				{:else}
 					<span
@@ -287,7 +289,15 @@
 				onmouseenter={() => toggleRichHarris('in')}
 				onmouseleave={() => toggleRichHarris('out')}
 			>
-				<img src={richHarrisUrl} alt="Rich Harris" class="rich-photo max-h-full object-contain" />
+				<img
+					src={richHarrisUrl}
+					alt="Rich Harris"
+					width="734"
+					height="1280"
+					class="rich-photo max-h-full object-contain"
+					loading="lazy"
+					decoding="async"
+				/>
 			</button>
 		</section>
 	</div>
@@ -344,7 +354,7 @@
 		justify-content: center;
 		width: fit-content;
 		border-radius: 9999px;
-		background: #ff3e00;
+		background: var(--color-svelte);
 		padding: 0.72rem 1.05rem;
 		color: white;
 		font-size: 0.88rem;

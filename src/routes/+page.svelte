@@ -67,27 +67,37 @@
 	});
 </script>
 
-<div class="gallery flex flex-col items-center bg-[#FAE8D5]">
-	<StonesLayer bind:stonesLayer bind:stones1 bind:stones2 />
-	<IntroScene bind:viking1 />
-	<CloudsScene bind:cloudsLayer bind:clouds bind:cloudsTrigger />
-	<BoatScene bind:boat bind:water />
-	<DarkScene bind:darkScene bind:darkTexture />
-</div>
-<LightScene
-	bind:viking4Scene
-	bind:viking5Scene
-	bind:viking6Scene
-	bind:darkPassLayer
-	bind:darkPassSmoke
-	bind:torchGlow
-	bind:runesVeil
-	bind:lightScreen
-	bind:lightSection
-	bind:lightWave
-	bind:light
-	bind:viking6LightMask
-	bind:viking7
-/>
-<SvelteVictory bind:svelteVictory />
-<Memes />
+<svelte:head>
+	<title>свелтпобеда.рф</title>
+	<meta
+		name="description"
+		content="Интерактивная сага о свелтпобеде, рунах, викингах и победе компилятора над лишним рантаймом."
+	/>
+</svelte:head>
+
+<main>
+	<div class="gallery flex flex-col items-center bg-[#FAE8D5]">
+		<StonesLayer bind:stonesLayer bind:stones1 bind:stones2 />
+		<IntroScene bind:viking1 />
+		<CloudsScene bind:cloudsLayer bind:clouds bind:cloudsTrigger />
+		<BoatScene bind:boat bind:water />
+		<DarkScene bind:darkScene bind:darkTexture />
+	</div>
+	<LightScene
+		bind:viking4Scene
+		bind:viking5Scene
+		bind:viking6Scene
+		bind:darkPassLayer
+		bind:darkPassSmoke
+		bind:torchGlow
+		bind:runesVeil
+		bind:lightScreen
+		bind:lightSection
+		bind:lightWave
+		bind:light
+		bind:viking6LightMask
+		bind:viking7
+	/>
+	<SvelteVictory bind:svelteVictory />
+	<Memes />
+</main>
