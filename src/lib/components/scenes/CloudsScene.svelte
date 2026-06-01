@@ -1,6 +1,6 @@
 <script lang="ts">
-	import cloud from '$lib/assets/objects/cloud.webp';
-	import cloudsBlock from '$lib/assets/objects/clouds.png';
+	import cloud from '$lib/assets/objects/cloud.avif';
+	import cloudsBlock from '$lib/assets/objects/clouds.avif';
 
 	let {
 		cloudsLayer = $bindable<HTMLElement>(),

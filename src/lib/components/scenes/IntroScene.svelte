@@ -1,5 +1,5 @@
 <script lang="ts">
-	import jetaLogo from '$lib/assets/jeta.png';
+	import jetaLogo from '$lib/assets/jeta.avif';
 	import viking0 from '$lib/assets/story/0.avif';
 	import viking1Image from '$lib/assets/story/1.avif';
 

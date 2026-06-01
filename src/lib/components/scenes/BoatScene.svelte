@@ -1,6 +1,6 @@
 <script lang="ts">
-	import boatImage from '$lib/assets/objects/boat.png';
-	import waterTexture from '$lib/assets/textures/water.png';
+	import boatImage from '$lib/assets/objects/boat.avif';
+	import waterTexture from '$lib/assets/textures/water.avif';
 	import viking2 from '$lib/assets/story/2.avif';
 
 	let { boat = $bindable<HTMLElement>(), water = $bindable<HTMLElement>() } = $props();

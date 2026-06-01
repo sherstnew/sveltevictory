@@ -2,7 +2,7 @@
 	import { flip } from 'svelte/animate';
 	import { gsap } from 'gsap';
 	import svelteLogo from '$lib/assets/logo.svg';
-	import conv from '$lib/assets/conv.png';
+	import conv from '$lib/assets/conv.avif';
 	import richHarrisPhoto from '$lib/assets/rich-harris.png';
 	import richHarrisPhotoSmile from '$lib/assets/rich-harris-smile.png';
 

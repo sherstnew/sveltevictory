@@ -1,5 +1,5 @@
 <script lang="ts">
-	import darkTexture from '$lib/assets/textures/dark-texture.png';
+	import darkTexture from '$lib/assets/textures/dark-texture.avif';
 	import viking4 from '$lib/assets/story/4.avif';
 	import viking5 from '$lib/assets/story/5.avif';
 	import viking6 from '$lib/assets/story/6.avif';
