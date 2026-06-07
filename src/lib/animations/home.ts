@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import Lenis from 'lenis';
+import { ExpoScaleEase } from 'gsap/EasePack';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export type HomeAnimationRefs = {
@@ -59,8 +60,21 @@ function isTopScene() {
 	return window.scrollY <= window.innerHeight * 0.75;
 }
 
+function isHistoryNavigation() {
+	const [navigation] = performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
+
+	return navigation?.type === 'back_forward';
+}
+
 function resetScrollPosition() {
-	if ('scrollRestoration' in history) {
+	if (window.location.hash || isHistoryNavigation()) {
+		return () => {};
+	}
+
+	const previousScrollRestoration =
+		'scrollRestoration' in history ? history.scrollRestoration : undefined;
+
+	if (previousScrollRestoration === 'auto') {
 		history.scrollRestoration = 'manual';
 	}
 
@@ -110,6 +124,10 @@ function resetScrollPosition() {
 		timeouts.forEach((timeout) => clearTimeout(timeout));
 		html.style.scrollBehavior = previousScrollBehavior;
 		html.style.scrollSnapType = previousScrollSnapType;
+
+		if (previousScrollRestoration) {
+			history.scrollRestoration = previousScrollRestoration;
+		}
 	};
 }
 
@@ -144,33 +162,35 @@ function setInitialAnimationState(refs: HomeAnimationRefs) {
 }
 
 export function setupHomeAnimations(refs: HomeAnimationRefs) {
-	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger, ExpoScaleEase);
 	setInitialAnimationState(refs);
 
 	const animations: GsapAnimation[] = [];
-	const releaseScrollBootLock = resetScrollPosition();
 	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	const releaseScrollBootLock = prefersReducedMotion ? () => {} : resetScrollPosition();
 	let lenis: Lenis | undefined;
 	let lenisFrame = 0;
 
-	if (!prefersReducedMotion) {
-		lenis = new Lenis({
-			duration: 1.15,
-			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-			smoothWheel: true,
-			wheelMultiplier: 0.85,
-			touchMultiplier: 1.25
-		});
+	if (prefersReducedMotion) {
+		return releaseScrollBootLock;
+	}
 
-		lenis.on('scroll', ScrollTrigger.update);
+	lenis = new Lenis({
+		duration: 1.15,
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		smoothWheel: true,
+		wheelMultiplier: 0.85,
+		touchMultiplier: 1.25
+	});
 
-		function updateSmoothScroll(time: number) {
-			lenis?.raf(time);
-			lenisFrame = requestAnimationFrame(updateSmoothScroll);
-		}
+	lenis.on('scroll', ScrollTrigger.update);
 
+	function updateSmoothScroll(time: number) {
+		lenis?.raf(time);
 		lenisFrame = requestAnimationFrame(updateSmoothScroll);
 	}
+
+	lenisFrame = requestAnimationFrame(updateSmoothScroll);
 
 	animations.push(
 		gsap.to(refs.stones1, {
@@ -230,7 +250,7 @@ export function setupHomeAnimations(refs: HomeAnimationRefs) {
 			scrollTrigger: {
 				trigger: refs.viking1,
 				start: 'top bottom',
-				end: '+=200%',
+				end: '+=100%',
 				scrub: true
 			}
 		})

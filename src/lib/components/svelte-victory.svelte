@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { flip } from 'svelte/animate';
+	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import svelteLogo from '$lib/assets/logo.svg';
 	import conv from '$lib/assets/conv.avif';
@@ -19,20 +20,16 @@
 
 	let { svelteVictory = $bindable<HTMLElement>() } = $props();
 
-	let now = $state(Date.now());
 	const startDate = new Date('2016-10-29T00:00:00').getTime();
+	let now = $state(startDate);
 
-	$effect(() => {
-		let frame: number;
-
-		function update() {
+	onMount(() => {
+		now = Date.now();
+		const timer = window.setInterval(() => {
 			now = Date.now();
-			frame = requestAnimationFrame(update);
-		}
+		}, 1000);
 
-		frame = requestAnimationFrame(update);
-
-		return () => cancelAnimationFrame(frame);
+		return () => window.clearInterval(timer);
 	});
 
 	const svelteAge = $derived((now - startDate) / 1000 / 3600 / 24 / 360);
@@ -171,16 +168,22 @@
 </script>
 
 <div
-	class="sveltevictory flex h-screen w-screen snap-start flex-col items-center justify-center gap-8"
+	class="sveltevictory flex h-screen w-screen snap-start flex-col items-center justify-center gap-8 px-4"
 	bind:this={svelteVictory}
 >
-	<img src={conv} alt="" class="image-fade-x xl:h-1/2" />
+	<img
+		src={conv}
+		alt=""
+		class="image-fade-x max-h-[68vh] w-full max-w-[72rem] object-contain xl:max-h-[72vh] xl:max-w-[86rem]"
+	/>
 	<header
-		class="flex flex-col gap-2 text-center font-sans text-2xl font-bold uppercase lg:text-4xl"
+		class="flex flex-col gap-2 text-center font-sans text-2xl font-bold uppercase lg:text-4xl 2xl:text-5xl"
 	>
 		<div class="victory-header flex justify-center gap-1 lg:gap-2">
-			<img src={svelteLogo} alt="" class="mt-1.5 h-8 lg:mt-2 lg:h-20" />
-			<span class="text-4xl lg:text-8xl"><span class="text-svelte">велт</span>победа</span>
+			<img src={svelteLogo} alt="" class="mt-1.5 h-8 lg:mt-2 lg:h-20 2xl:h-28" />
+			<span class="text-4xl lg:text-8xl 2xl:text-[8.5rem]"
+				><span class="text-svelte">велт</span>победа</span
+			>
 		</div>
 		<span class="victory-subheader"
 			>уже <span class="mx-3 tabular-nums">{svelteAge.toFixed(12)}</span> лет</span

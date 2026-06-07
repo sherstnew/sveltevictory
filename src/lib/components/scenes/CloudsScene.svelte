@@ -19,7 +19,7 @@
 			alt="Облако"
 			width="1711"
 			height="870"
-			class="cloud pointer-events-none z-20 scale-200 opacity-0"
+			class="cloud pointer-events-none z-20 scale-[2.25] opacity-0"
 			bind:this={clouds[i]}
 			loading="lazy"
 			decoding="async"

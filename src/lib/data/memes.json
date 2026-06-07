@@ -1,9 +1,21 @@
 [
-	{ "file": "1.png", "alt": "svelte meme" },
-	{ "file": "2.png", "alt": "svelte meme" },
-	{ "file": "3.png", "alt": "svelte meme" },
-	{ "file": "4.png", "alt": "svelte meme" },
-	{ "file": "7.png", "alt": "svelte meme" },
-	{ "file": "5.png", "alt": "svelte meme" },
-	{ "file": "6.png", "alt": "svelte meme" }
+	{ "file": "1.png", "alt": "Donald Duck sleeps peacefully under text about never using React" },
+	{
+		"file": "2.png",
+		"alt": "Vince McMahon gets more excited about an app using Rust backend and Svelte frontend"
+	},
+	{
+		"file": "3.png",
+		"alt": "Noah labels two elephants Svelte Native and Nativescript with Svelte on the larger elephant"
+	},
+	{ "file": "4.png", "alt": "Friendship ended with React and Meta, now Svelte is my best friend" },
+	{
+		"file": "7.png",
+		"alt": "Metronome meme about being pumped for runes but sad to see let reactivity go"
+	},
+	{ "file": "5.png", "alt": "Code screenshot joking that runes lampoon pluspage.svelte" },
+	{
+		"file": "6.png",
+		"alt": "Who would win meme comparing the React ecosystem against one journalist boi"
+	}
 ]

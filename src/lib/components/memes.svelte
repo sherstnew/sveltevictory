@@ -29,7 +29,7 @@
 				alt={meme.alt}
 				width={image.width}
 				height={image.height}
-				class="mb-8 rounded-sm drop-shadow-2xl"
+				class="mb-8 block w-full break-inside-avoid rounded-sm drop-shadow-2xl"
 				loading="lazy"
 				decoding="async"
 			/>
